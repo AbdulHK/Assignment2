@@ -8,22 +8,14 @@ public class Measure{
 	private UltrasonicSensor sonar = new UltrasonicSensor(SensorPort.S4);
 	private LightSensor light = new LightSensor(SensorPort.S3);
 
-	 int light=0;
-	float[] length=new float[];
+	 int light;
+	float[] size=new float[];
 	float width;
 	float length;
-	int i=0;
 
-	
-		while(sonar.getDistance()<20)
-		{
-			pilot.forward();
 
-		}
-		
-		pilot.rotate(90);
-		i++;
-		
+		light = light.getLightValue();
+
 		while(sonar.getDistance()<20)
 		{
 			pilot.forward();
@@ -31,7 +23,31 @@ public class Measure{
 		}
 
 		pilot.rotate(90);
-		i++;
+
+		light += light.getLightValue();
+
+		while(sonar.getDistance()<20)
+		{
+			pilot.forward();
+
+		}
+		//store lights value after each turn
+
+
+		pilot.rotate(90);
+
+		light += light.getLightValue();
+
+		while(sonar.getDistance()<20)
+		{
+			pilot.forward();
+
+		}
+
+
+		pilot.rotate(90);
+		light += light.getLightValue();
+
 		while(sonar.getDistance()<20)
 		{
 			pilot.forward();
@@ -39,15 +55,7 @@ public class Measure{
 		}
 
 		pilot.rotate(90);
-		i++;
-		while(sonar.getDistance()<20)
-		{
-			pilot.forward();
 
-		}
-
-		pilot.rotate(90);
-		i++;
 
 
 	}
