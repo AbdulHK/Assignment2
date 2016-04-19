@@ -3,11 +3,12 @@ import lejos.nxt.*;
 
 public class assignment{
 	public static void main(Stringp[] args){
-		Measure measure = new measure;
-
 		LCD.drawString("Assignment 2", 0, 0);
 		Button.waitForAnyPress();
 		LCD.clear();
+		Measure measure = new measure;
+
+		
 		
 		
 		Behavior light = new light(measure.light);

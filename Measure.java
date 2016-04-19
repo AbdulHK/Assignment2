@@ -31,7 +31,6 @@ public class Measure{
 			pilot.forward();
 
 		}
-		//store lights value after each turn
 
 
 		pilot.rotate(90);
