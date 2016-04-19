@@ -3,25 +3,23 @@ import lejos.nxt.*;
 import lejos.robotics.navigation.DifferentialPilot;
 
 
-public class Move implements Behavior{
-	
-	private boolean suppressed = false;
+public class motor implements Behavior{
+
 	private DifferentialPilot pilot = new DifferentialPilot(2.25, 4.25, Motor.A, Motor.C);
+	private boolean suppress = false;
 	
-
-
-
 	public void action(){
-		suppressed = false;
+	//suppress = false;
 		pilot.forward();
 	}
 	
 	public void suppress(){
-		suppressed = true;
+		suppress = true;
 	}
 
 	public boolean takeControl(){
 		return true;
 	}
-
+	
+	
 }

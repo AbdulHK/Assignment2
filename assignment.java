@@ -13,10 +13,11 @@ public class assignment
 		LCD.clear();
 		
 		Measure measure = new Measure();
-
+		Behavior motor = new motor();
 		Behavior light = new light(measure.floorlight);
 		
-		Behavior [] b1 = {light};
+		Behavior [] b1 = {motor,light};
+		
 		Arbitrator arby = new Arbitrator(b1);
 		arby.start();
 		

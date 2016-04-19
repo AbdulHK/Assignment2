@@ -7,20 +7,24 @@ public class light implements Behavior {
 	private LightSensor light = new LightSensor(SensorPort.S3);
 	private DifferentialPilot pilot = new DifferentialPilot(2.25, 4.25, Motor.A, Motor.C);
 	private boolean suppress = false;
-	int currfloor;
+	float currfloor;
 
 	
 	public light(int floorlight)
 	{
+		LCD.drawString("light"+Integer.toString(floorlight),0, 0);
+		
 		floorcolour = floorlight;
 	}
 
 	
 	public void action()
-	{
-		//LCD.drawString("Surface", 5, 0, 0);
+	{	LCD.clear();
+		LCD.drawString("Surface",0, 0);
 		Sound.beep();
+		
 		suppress = false;
+		
 	}
 
 	public void suppress ()
@@ -30,8 +34,17 @@ public class light implements Behavior {
 
 	public boolean takeControl()
 	{
-		if(floorcolour > light.getLightValue() || floorcolour <light.getLightValue())
+		
+		
+		currfloor=light.getLightValue();
+		if(currfloor > currfloor || currfloor < currfloor)
+			LCD.clear();
+		
 			return true;
+		
+		//LCD.drawString("light"+Integer.toString(floorlight),0, 0);
+		
+				
 	}
 }
 

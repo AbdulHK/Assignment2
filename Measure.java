@@ -25,7 +25,7 @@ public class Measure{
 		
 		floorlight += light.getLightValue();
 		width = pilot.getMovement().getDistanceTraveled();
-		LCD.drawString("width"+ pilot.getMovement().getDistanceTraveled(),4,2);
+		//LCD.drawString("width"+ pilot.getMovement().getDistanceTraveled(),4,2);
 		pilot.rotate(90);
 		
 		while(sonar.getDistance()>20)
@@ -36,7 +36,6 @@ public class Measure{
 		
 		floorlight += light.getLightValue();
 		lenght = pilot.getMovement().getDistanceTraveled();
-		//LCD.drawString("length"+ pilot.getMovement().getDistanceTraveled(),4,5);
 
 		pilot.rotate(90);
 		
@@ -55,11 +54,11 @@ public class Measure{
 		}
 		floorlight += light.getLightValue();
 		pilot.rotate(90);
+	
 		
-		LCD.drawString(Integer.toString(floorlight),4,0);
-		LCD.drawString(" width " +Float.toString(width),4,2);
-		LCD.drawString("lenght" +Float.toString(lenght),4,5);
-		Button.waitForAnyPress();
+		//LCD.drawString(Integer.toString(floorlight),4,0);
+		//LCD.drawString(" width " +Float.toString(width),4,2);
+		//LCD.drawString("lenght" +Float.toString(lenght),4,5);
 	}
 
 
