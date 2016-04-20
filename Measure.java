@@ -44,7 +44,7 @@ public class Measure{
 			pilot.forward();
 
 		}
-		//floorlight += light.getLightValue();
+		floorlight += light.getLightValue();
 		pilot.rotate(90);
 		
 		while(sonar.getDistance()>20)
@@ -52,9 +52,9 @@ public class Measure{
 			pilot.forward();
 
 		}
-		//floorlight += light.getLightValue();
+		floorlight += light.getLightValue();
 		pilot.rotate(90);
-		floorlight/=2;
+	
 		
 		//LCD.drawString(Integer.toString(floorlight),4,0);
 		//LCD.drawString(" width " +Float.toString(width),4,2);
