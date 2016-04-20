@@ -34,7 +34,6 @@ public class Measure{
 
 		}
 		
-		floorlight += light.getLightValue();
 		lenght = pilot.getMovement().getDistanceTraveled();
 
 		pilot.rotate(90);
@@ -44,7 +43,6 @@ public class Measure{
 			pilot.forward();
 
 		}
-		floorlight += light.getLightValue();
 		pilot.rotate(90);
 		
 		while(sonar.getDistance()>20)

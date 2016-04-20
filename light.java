@@ -20,8 +20,12 @@ public class light implements Behavior {
 	
 	public void action()
 	{	LCD.clear();
+		currfloor=light.getLightValue();
+		if(currfloor > currfloor || currfloor < currfloor)
+		{
 		LCD.drawString("Surface",0, 0);
 		Sound.beep();
+	}
 		
 		suppress = false;
 		
@@ -36,9 +40,7 @@ public class light implements Behavior {
 	{
 		
 		
-		currfloor=light.getLightValue();
-		if(currfloor > currfloor || currfloor < currfloor)
-			LCD.clear();
+		
 		
 			return true;
 		
