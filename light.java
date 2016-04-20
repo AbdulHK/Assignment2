@@ -3,50 +3,48 @@ import lejos.robotics.subsumption.*;
 import lejos.robotics.navigation.DifferentialPilot;
 
 public class light implements Behavior {
-	private int value;
+	private int floorcolour;
 	private LightSensor light = new LightSensor(SensorPort.S3);
 	private DifferentialPilot pilot = new DifferentialPilot(2.25, 4.25, Motor.A, Motor.C);
 	private boolean suppress = false;
-	int currfloor;
+	float currfloor;
 
 	
-	public floor(int light)
+	public light(int floorlight)
 	{
-		value=light;
-	}
-
-	
-	public void action(){
+		LCD.drawString("light"+Integer.toString(floorlight),0, 0);
 		
-
-		suppress = true;
+		floorcolour = floorlight;
 	}
 
-	public void suppress (){
-
-		suppress = true;
-	}
-
-	public boolean takeControl(){
-
-		LCD.drawString("light", 50, 50);
-		LCD.drawString("light " + Integer.toString(value), 0, 0);
 	
+	public void action()
+	{	LCD.clear();
+		LCD.drawString("Surface",0, 0);
+		Sound.beep();
+		
+		suppress = false;
+		
+	}
 
-		if (suppress == true)
-			return false;
+	public void suppress ()
+	{
+		suppress = true;
+	}
 
-		try{Thread.sleep(200);}catch(Exception e)
-		 {
-
-		}
-		currfloor = light.getNormalizedLightValue();
-		if (suppress == false && currfloor >= value)
-					Sound.beep()
-
+	public boolean takeControl()
+	{
+		
+		
+		currfloor=light.getLightValue();
+		if(currfloor > currfloor || currfloor < currfloor)
+			LCD.clear();
+		
 			return true;
-		else
-			return false;
+		
+		//LCD.drawString("light"+Integer.toString(floorlight),0, 0);
+		
+				
 	}
 }
 
