@@ -19,13 +19,14 @@ public class light implements Behavior {
 
 	
 	public void action()
-	{	LCD.clear();
+	{	
+		LCD.clear();
 		currfloor=light.getLightValue();
 		if(currfloor > currfloor || currfloor < currfloor)
 		{
 		LCD.drawString("Surface",0, 0);
 		Sound.beep();
-	}
+		}
 		
 		suppress = false;
 		
