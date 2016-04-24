@@ -11,7 +11,7 @@ public class light implements Behavior {
 
 	
 	public light(int floorlight)
-	{
+	{ //getting light value from measure class.
 		LCD.drawString("light"+Integer.toString(floorlight),0, 0);
 		
 		floorcolour = floorlight;
@@ -19,14 +19,12 @@ public class light implements Behavior {
 
 	
 	public void action()
-	{	
+	{	 //what happens when the behaviour is activated.
 		LCD.clear();
-		currfloor=light.getLightValue();
-		if(currfloor > currfloor || currfloor < currfloor)
-		{
+		
 		LCD.drawString("Surface",0, 0);
 		Sound.beep();
-		}
+		
 		
 		suppress = false;
 		
@@ -39,12 +37,17 @@ public class light implements Behavior {
 
 	public boolean takeControl()
 	{
+		 //condtion when to actviate the behaviour
+		currfloor=light.getLightValue();
+		if(currfloor > currfloor || currfloor < currfloor)
+			{
 		
-		
-		
-		
-			return true;
-		
+				return true;
+			}
+		else
+			{
+			return false;
+			}
 		//LCD.drawString("light"+Integer.toString(floorlight),0, 0);
 		
 				

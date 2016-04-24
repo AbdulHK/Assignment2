@@ -12,12 +12,15 @@ public class assignment
 		Button.waitForAnyPress();
 		LCD.clear();
 		
-		Measure measure = new Measure();
-		Behavior motor = new motor(measure.length,measure.width);
+		Measure measure = new Measure(); //calling measure room
+		//robot behaviours.
+		Behavior motor = new motor(measure.lenght,measure.width); 
 		Behavior light = new light(measure.floorlight);
+		Behavior object = new object();
+
 		
 		Behavior [] b1 = {motor,light};
-		
+		//add behaviours into arbitrator array and start it.
 		Arbitrator arby = new Arbitrator(b1);
 		arby.start();
 		
