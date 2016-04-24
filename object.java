@@ -14,11 +14,12 @@ public class light implements Behavior {
 
 	
 	public void action()
-	{	
-		
+	{	//travelling in a circual path tutorial.
+		// http://www.lejos.org/nxt/nxj/tutorial/WheeledVehicles/SteerTest.java
 		LCD.clear();
 		
 		LCD.drawString("avoiding object",0, 0);
+		pilot.steer(35,75);
 		suppress = false;
 		
 	}

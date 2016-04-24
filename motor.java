@@ -22,6 +22,8 @@ public class motor implements Behavior{
 	}
 	public void action(){
 		suppress = false;
+		//moves the robot forward
+		pilot.setTravelSpeed(4.0);
 		pilot.forward();
 	}
 	
