@@ -3,15 +3,15 @@ import lejos.robotics.subsumption.*;
 import lejos.robotics.navigation.DifferentialPilot;
 
 public class light implements Behavior {
-	private int floorcolour;
+	 int floorcolour;   //floor value from measure class
 	private LightSensor light = new LightSensor(SensorPort.S3);
 	private DifferentialPilot pilot = new DifferentialPilot(2.25, 4.25, Motor.A, Motor.C);
 	private boolean suppress = false;
-	float currfloor;
+	int currfloor;    //current floor color "where the robot is standing"
 
 	
 	public light(int floorlight)
-	{ //getting light value from measure class.
+	{ //getting light value from measure class on the constructor and assigning it to a value here for easier access.
 		LCD.drawString("light"+Integer.toString(floorlight),0, 0);
 		
 		floorcolour = floorlight;
@@ -25,8 +25,7 @@ public class light implements Behavior {
 		LCD.drawString("Surface",0, 0);
 		Sound.beep();
 		
-		
-		suppress = false;
+		suppress = false;   //when to stop the action method.
 		
 	}
 
@@ -39,6 +38,7 @@ public class light implements Behavior {
 	{
 		 //condtion when to actviate the behaviour
 		currfloor=light.getLightValue();
+		//comparing the current floor value to the one we have stored. if it is greater than OR less than it. robot would beep.
 		if(currfloor > currfloor || currfloor < currfloor)
 			{
 		

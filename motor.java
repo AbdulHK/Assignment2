@@ -12,7 +12,7 @@ public class motor implements Behavior{
 
 	
 
-	public light(float length,float width)
+	public motor(float length,float width)
 	{
 		LCD.drawString("length"+Float.toString(length),0, 0);
 		LCD.drawString("width"+Float.toString(width),0, 5);
