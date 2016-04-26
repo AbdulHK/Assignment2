@@ -38,11 +38,10 @@ public class Measure{
 		{
 			//storing the distance the pilot travelled since the last Tacho reset.
 			lenght = pilot.getMovement().getDistanceTraveled();
-			
-
 		}
 		pilot.rotate(90);
 		pilot.forward();
+		
 		//while loop to move the robot to to the next part of the room.
 		while(sonar.getDistance()>30)
 		{
@@ -50,7 +49,6 @@ public class Measure{
 
 		}
 		pilot.rotate(90);
-		
 		
 		//while loop to move the robot to to the next part of the room.
 		while(sonar.getDistance()>30)
@@ -58,18 +56,17 @@ public class Measure{
 			
 			pilot.forward();
 		}
-		
 		pilot.rotate(90);
 		pilot.stop();
 		//robot should have completed all four sides of the room now. it should move on to the next Behaviour now
 		// which is motor behaviour to start cleaning the room.
 		
 		
-		LCD.drawString(Integer.toString(floorlight),4,0);
-		LCD.drawString(" width " +Float.toString(width),4,2);
-		LCD.drawString("lenght" +Float.toString(lenght),4,5);
-		Button.waitForAnyPress();
-		LCD.clear();
+		//LCD.drawString(Integer.toString(floorlight),4,0);
+		//LCD.drawString(" width " +Float.toString(width),4,2);
+		//LCD.drawString("lenght" +Float.toString(lenght),4,5);
+		//Button.waitForAnyPress();
+		//LCD.clear();
 	}
 
 

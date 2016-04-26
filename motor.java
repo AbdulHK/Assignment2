@@ -26,7 +26,7 @@ public class motor implements Behavior{
 
 	public boolean takeControl()
 	{
-			return true;
+			return true; // returns true all the time so robot can move forward
 	
 	}
 	

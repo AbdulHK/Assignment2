@@ -7,7 +7,8 @@ Assignment 2
 Maciej Piotrowski C13470112
 Abdulellah Hakim D12122837
 */
-public class light implements Behavior {
+public class light implements Behavior 
+{
 	int floorcolour;   //floor value from measure class
 	private LightSensor light = new LightSensor(SensorPort.S3);
 	private DifferentialPilot pilot = new DifferentialPilot(2.25, 4.25, Motor.A, Motor.B);
@@ -27,7 +28,7 @@ public class light implements Behavior {
 		suppress = false;   //when to stop the action method.
 		LCD.clear();
 		LCD.drawString("Surface",0, 0);
-		LCD.drawString(Float.toString(floorcolour),4,0);
+		LCD.drawString(Float.toString(floorcolour),4,0); // displaying the floor colour 
 		Sound.beep();
 		try{
 			Thread.sleep(100);
