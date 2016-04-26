@@ -1,7 +1,12 @@
 import lejos.nxt.*;
 import lejos.robotics.subsumption.*;
 import lejos.robotics.navigation.DifferentialPilot;
-
+/* 
+Mobile Robotics
+Assignment 2  
+Maciej Piotrowski C13470112
+Abdulellah Hakim D12122837
+*/
 public class hitwall implements Behavior {
 	private DifferentialPilot pilot = new DifferentialPilot(2.25, 4.25, Motor.A, Motor.B);
 	private boolean suppress = false;
