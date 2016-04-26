@@ -14,12 +14,13 @@ public class assignment
 		LCD.clear();
 		
 		Measure measure = new Measure(); //calling measure room
-		Behavior motor = new motor(measure.lenght,measure.width); //motor behaviour takes length and width from Measure() class.
+		Behavior motor = new motor();//motor behaviour takes length and width from Measure() class.
+		Behavior see = new seewalls(measure.lenght, measure.width);
 		Behavior light = new light(measure.floorlight);   //light takes the light value from Measure() class.
 		Behavior object = new object(); //creating a behaviour to avoid objects.
-
-		
-		Behavior [] b1 = {motor,light,object};			//adding behaviours into arbitrator array and start it.
+		Behavior touch = new hitwall(); // hit the wall detection
+	
+		Behavior [] b1 = {motor,touch,see,object,light};			//adding behaviours into arbitrator array and start it.
 
 		Arbitrator arby = new Arbitrator(b1);
 		arby.start();
